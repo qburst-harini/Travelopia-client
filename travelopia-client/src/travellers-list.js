@@ -37,10 +37,10 @@ const TravellersList = () => {
           <tbody>
             {list.map((val, idx) => {
               return (
-                <tr>
+                <tr key={`row-${idx}`}>
                   {Object.values(tableHeaders).map((h, idx) => {
                     const value = h === "dollars" ? `$${val[h]}` : `${val[h]}`;
-                    return <td key={`item-${h}`}>{value}</td>;
+                    return <td key={`${idx}`}>{value}</td>;
                   })}
                 </tr>
               );

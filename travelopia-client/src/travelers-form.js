@@ -22,7 +22,7 @@ const TravellersForm = () => {
       .email("Invalid email address format")
       .required("Email is required"),
   });
-  
+
   return (
     <div className="travellers-form">
       <h2>Travelers Form</h2>
@@ -40,8 +40,7 @@ const TravellersForm = () => {
           resetForm(initialForm);
         }}
       >
-        {({ values, setFieldValue, handleChange }) => {
-          console.log(values);
+        {({ values, setFieldValue }) => {
           return (
             <Form>
               <div className="form-display">
@@ -76,7 +75,12 @@ const TravellersForm = () => {
                 />
 
                 <label htmlFor="Dollars">Dollars</label>
-                <Field name="dollars" className="form-field" readOnly value={`$${values.dollars}`} />
+                <Field
+                  name="dollars"
+                  className="form-field"
+                  readOnly
+                  value={`$${values.dollars}`}
+                />
 
                 <button type="submit">Submit</button>
               </div>
